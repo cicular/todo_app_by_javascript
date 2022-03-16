@@ -5,6 +5,17 @@ const onClickAdd = () => {
     // 値を初期化
     document.getElementById("add-text").value = "";
 
+    createIncompleteList(inputText)
+}
+
+// 未完了リストから指定の要素を削除
+const deleteFromImcompleteList = (target) => {
+    // 子要素を削除
+    document.getElementById("incomplete-ul").removeChild(target);
+}
+
+// 未完了リストに追加する関数
+const createIncompleteList = (text) => {
     // divを生成
     const div = document.createElement("div");
     // クラス名を付与
@@ -12,7 +23,7 @@ const onClickAdd = () => {
 
     // liタグを生成
     const li = document.createElement("li");
-    li.innerText = inputText;
+    li.innerText = text;
 
     // buttonタグ生成
     const complete_button = document.createElement("button");
@@ -69,7 +80,7 @@ const onClickAdd = () => {
             // 最初の子要素（li）の文字を取得
             // ※firstElementChild().innerTextとすると、firstElementChild is not a functionエラーになる。
             const text = back_target.firstElementChild.innerText;
-            alert(text);
+            createIncompleteList(text)
         });
 
         done_target.appendChild(li);
@@ -86,12 +97,6 @@ const onClickAdd = () => {
 
     // 未完了リスト（ulタグ）に追加
     document.getElementById("incomplete-ul").appendChild(div);
-}
-
-// 未完了リストから指定の要素を削除
-const deleteFromImcompleteList = (target) => {
-    // 子要素を削除
-    document.getElementById("incomplete-ul").removeChild(target);
 }
 
 // イベントリスナー
