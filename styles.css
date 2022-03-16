@@ -1,0 +1,80 @@
+body {
+    font-family: sans-serif;
+}
+
+input {
+    border-radius: 16px;
+    /* 枠線を消す */
+    border: none;
+    /* 上下については6px、左右に関しては16px */
+    padding: 6px 16px;
+    /* フォーカスを当てたときに枠線が表示されないようにする */
+    outline: none;
+}
+
+button {
+    border-radius: 16px;
+    /* 枠線を消す */
+    border: none;
+    /* 上下4px、左右16px */
+    padding: 4px 16px;
+}
+
+/* CSSの疑似クラス 要素が特定の状態になっているときだけ実行されるクラス */
+/* よく使われる疑似クラス */
+/* 疑似クラス:link、疑似クラス:visited、疑似クラス:hover、疑似クラス:nth-child(n) */
+button:hover {
+    /* 背景色 */
+    background-color: #ff7fff;
+    /* 文字色 */
+    color: #ffffff;
+    /* カーソルの形を変える */
+    cursor :pointer
+}
+
+li {
+    margin-right: 8px;
+}
+
+.input_area {
+    background-color: #c1ffff;
+    width: 400px;
+    height: 30px;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 8px;
+}
+
+.incomplete-area {
+    background-color: #c6ffe2;
+    width: 400px;
+    min-height: 200px;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 8px;
+}
+
+.complete-area {
+    background-color: #ffffe0;
+    width: 400px;
+    min-height: 200px;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 8px;
+}
+
+.title {
+    text-align: center;
+    margin-top: 0;
+    /* 太字化 */
+    font-weight: bold;
+    color: #666;
+}
+
+.list-row {
+    /* 子要素を横並びにする。以前はfloat: leftが主流だった */
+    display: flex;
+    /* 上下の幅を整える */
+    align-items: center;
+    padding: 4px;
+}
